@@ -12,6 +12,7 @@ import { ROUTES } from './app.routes';
 import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
 import { ComplaintComponent } from './complaint/complaint.component';
+import {ApiService} from './core/api.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ComplaintComponent } from './complaint/complaint.component';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [AuthService],
+  providers: [AuthService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

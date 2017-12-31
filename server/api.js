@@ -1,6 +1,7 @@
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
 const config = require('./config');
+const Complaint = require('./models/Complaint');
 
 module.exports = function(app, config) {
 
@@ -25,11 +26,15 @@ module.exports = function(app, config) {
 
   // GET API root
   app.get('/api/', (req, res) => {
-    res.send('API works');
+    Complaint.create({
+      name: 'New Complaint'
+    },(err, complaint) => {
+      res.json(complaint);
+    })
   });
 
 
-  app.get('/api/private', jwtCheck, (req, res) => {
-    res.send('API works');
+  app.get('/api/complaints', jwtCheck, (req, res) => {
+
   });
 };
