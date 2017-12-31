@@ -13,6 +13,7 @@ import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import {ApiService} from './core/api.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {ApiService} from './core/api.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [AuthService, ApiService],

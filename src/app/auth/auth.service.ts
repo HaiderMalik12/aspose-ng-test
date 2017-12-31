@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
+import {ENV} from '../core/env.config';
 
 @Injectable()
 export class AuthService {
@@ -10,8 +11,8 @@ export class AuthService {
     clientID: 'rdw4tCARJ6r6avcLozhYaTn2e7Rghl23',
     domain: 'haidermalik.auth0.com',
     responseType: 'token id_token',
-    audience: 'https://haidermalik.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    audience: 'http://localhost:8083/api/',
+    redirectUri: `${ENV.BASE_URI}/callback`,
     scope: 'openid'
   });
 

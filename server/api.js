@@ -35,6 +35,8 @@ module.exports = function(app, config) {
 
 
   app.get('/api/complaints', jwtCheck, (req, res) => {
-
+    Complaint.find((err, complaints) => {
+      return res.json(complaints);
+    })
   });
 };
