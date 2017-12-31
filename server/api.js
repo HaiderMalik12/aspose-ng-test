@@ -16,4 +16,16 @@ module.exports = function(app, config) {
     issuer: `https://${config.AUTH0_DOMAIN}/`,
     algorithm: 'RS256'
   });
+
+  /*
+ |--------------------------------------
+ | API Routes
+ |--------------------------------------
+ */
+
+  // GET API root
+  app.get('/api/', (req, res) => {
+    res.send('API works');
+  });
+
 };
