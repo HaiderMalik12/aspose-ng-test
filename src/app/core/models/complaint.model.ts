@@ -1,3 +1,3 @@
-export default class UserComplaint {
+export default class Complaint {
   constructor(public name: String) {}
 }
