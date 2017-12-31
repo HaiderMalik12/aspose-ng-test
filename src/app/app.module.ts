@@ -11,12 +11,14 @@ import { ROUTES } from './app.routes';
 
 import { AuthService } from './auth/auth.service';
 import { CallbackComponent } from './callback/callback.component';
+import { ComplaintComponent } from './complaint/complaint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CallbackComponent
+    CallbackComponent,
+    ComplaintComponent
   ],
   imports: [
     BrowserModule,
